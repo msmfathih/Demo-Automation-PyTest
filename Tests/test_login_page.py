@@ -51,8 +51,13 @@ class Test_loginpage(BaseTest):
     #     press_login_button.click()
 
     def test_valid_login(self):
-        self.driver.find_element(By.ID,'email').send_keys("admin@gmail.com")
-        self.driver.find_element(By.XPATH, "//img[@id='enterimg']").click()
+        clear_email_field = self.driver.find_element(By.ID, "email").clear()
+        enter_valid_email = self.driver.find_element(By.ID, "email")
+        enter_valid_email.send_keys(TestData.USER_NAME)
+        time.sleep(2)
+
+        press_login_button = self.driver.find_element(By.ID, "enterimg")
+        press_login_button.click()
 
 
 
