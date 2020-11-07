@@ -26,7 +26,7 @@ class Test_Homepage(BaseTest):
 
         enter_valid_email = self.driver.find_element(By.ID, Locators.VALID_EMAIL_ID)
         enter_valid_email.send_keys(TestData.USER_NAME)
-        time.sleep(2)
+        time.sleep(3)
         self.driver.find_element(By.ID, Locators.INDEX_LOGIN_BUTTON_ID).click()
 
 
