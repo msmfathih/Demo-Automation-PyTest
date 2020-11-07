@@ -11,7 +11,7 @@ class Locators:
 
 
     """
-    Test_HomePage Locators
+    Test_HomePage Property 
     """
     VERIFY_REGISTER_PAGE_TITLE = "//h1[contains(text(),'Automation Demo Site')]"
     REGISTER_PAGE_TITLE_MESSAGE = "Automation Demo Site"
@@ -38,6 +38,9 @@ class Locators:
 
 
 
+    """
+    Test_Static Property 
+    """
 
 
 
