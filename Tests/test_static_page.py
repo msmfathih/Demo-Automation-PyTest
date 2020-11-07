@@ -13,7 +13,6 @@ from Configuration.conftest import init_driver
 class BaseTest:
     pass
 
-
 class Test_Staticpage(BaseTest):
 
     def test_navigate_static_page(self):

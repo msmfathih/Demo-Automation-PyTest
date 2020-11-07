@@ -10,6 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 class BaseTest:
     pass
 
+@pytest.mark.run(order=1)
 class Test_loginpage(BaseTest):
 
     def test_invalid_login(self):
@@ -43,7 +44,7 @@ class Test_loginpage(BaseTest):
         assert verifyWrongEmailErrorMessage.text == Locators.VERIFY_EMAIL_MESSAGE
         self.driver.back()
 
-
+    @pytest.mark.run(order=2)
     def test_valid_login(self):
         enter_valid_email = self.driver.find_element(By.ID, Locators.VALID_EMAIL_ID)
         enter_valid_email.send_keys(TestData.USER_NAME)
