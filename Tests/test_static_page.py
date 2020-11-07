@@ -18,6 +18,8 @@ class Test_Staticpage(BaseTest):
 
     def test_navigate_static_page(self):
         self.driver.get(TestData.REGISTER_PAGE)
+        self.driver.implicitly_wait(20)
+
         assert "Register" in self.driver.title
         print("Assertion Test Pass")
 

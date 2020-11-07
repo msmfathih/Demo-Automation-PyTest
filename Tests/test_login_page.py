@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from TestData.config import TestData
 from Locators.Locators import Locators
 from Configuration.conftest import init_driver
-
+from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.mark.usefixtures("init_driver")
 class BaseTest:
@@ -12,8 +12,10 @@ class BaseTest:
 
 class Test_loginpage(BaseTest):
 
-    def test_valid_login(self):
+    def test_invalid_login(self):
         self.driver.get(TestData.BASE_URL)
+        self.driver.implicitly_wait(20)
+
         assert "Index" in self.driver.title
         print("Assertion Test Pass")
         try:
@@ -42,22 +44,16 @@ class Test_loginpage(BaseTest):
         self.driver.back()
 
 
-    # def test_valid_login(self):
-    #     enter_valid_email = self.driver.find_element(By.ID, Locators.VALID_EMAIL_ID)
-    #     enter_valid_email.send_keys(TestData.ENTER_VALID_EMAIL_ID)
-    #     time.sleep(2)
-    #
-    #     press_login_button = self.driver.find_element(By.ID, Locators.INDEX_LOGIN_BUTTON_ID)
-    #     press_login_button.click()
-
     def test_valid_login(self):
-        clear_email_field = self.driver.find_element(By.ID, "email").clear()
-        enter_valid_email = self.driver.find_element(By.ID, "email")
+        enter_valid_email = self.driver.find_element(By.ID, Locators.VALID_EMAIL_ID)
         enter_valid_email.send_keys(TestData.USER_NAME)
         time.sleep(2)
+        self.driver.find_element(By.ID, Locators.INDEX_LOGIN_BUTTON_ID).click()
 
-        press_login_button = self.driver.find_element(By.ID, "enterimg")
-        press_login_button.click()
+
+
+
+
 
 
 

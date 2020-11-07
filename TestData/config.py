@@ -26,6 +26,7 @@ class TestData:
     VERIFY_WRONG_EMAIL_XPATH  = "// label[ @ id = 'errormsg']"
     VERIFY_EMAIL_MESSAGE = "Invalid User Name or PassWord"
 
-
+    ENTER_EMAIL = "fazil@gmail.com"
+    ENTER_PHONE_NUMBER = "0528542762"
 
 
