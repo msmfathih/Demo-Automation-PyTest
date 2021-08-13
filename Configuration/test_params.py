@@ -33,7 +33,7 @@ class TestRentVehicle(BaseTest):
         assert "rentvehicles" in self.driver.current_url
 
         self.driver.find_element(By.ID, 'email').send_keys(username)
-        time.sleep(2)
+        time.sleep(3)
         self.driver.find_element(By.ID, 'password').send_keys(password)
         time.sleep(2)
         self.driver.find_element_by_id("btnLogin").click()
