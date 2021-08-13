@@ -67,7 +67,7 @@ class Test_Homepage(BaseTest):
                 radioButton.click()
                 time.sleep(1)
 
-    @pytest.mark.run(order=6)
+
     @pytest.mark.run(order=6)
     def test_select_hobby(self):
         select_hobby = self.driver.find_element(By.ID, Locators.HOBBY1_ID)

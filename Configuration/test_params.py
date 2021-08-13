@@ -2,8 +2,6 @@ import time
 import pytest
 from selenium.webdriver.common.by import By
 
-
-
 @pytest.mark.usefixtures("init_driver")
 class BaseTest:
     pass
